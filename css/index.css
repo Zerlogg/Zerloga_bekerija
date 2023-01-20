@@ -1,0 +1,139 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('https://cdn.discordapp.com/attachments/690155185321934898/1066054237575974952/Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #eee3e1;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+}
+
+.header_logo {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.navigation {
+    margin: 0px;
+}
+
+.language {
+    margin-left: 10px;
+}
+
+.registration {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    font-size: 26px;
+    font-family: Monospace;
+}
+  
+li {
+    float: left;
+    padding: 0px 16px;
+}
+
+.language li{
+    padding: 0px 10px;
+}
+
+li a {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a::after {
+    content: '';
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    transform-origin: center;
+    transition: transform 0.4s ease-out;
+}
+  
+li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: auto;
+    font-size: 26px;
+    font-family: Monospace;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+}
+
+.lower_welcome {
+    display: flex;
+    margin-top: 100px;
+}
+
+.main_description {
+    text-align: left;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.main_description_text_button {
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.welcome_images {
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.image1 {
+    height: 200px;
+    width: 200px;
+    padding: 0px 5px;
+}
+
+.welcome_images_button {
+    display: block;
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 11px;
+}
