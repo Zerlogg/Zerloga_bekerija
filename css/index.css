@@ -3,24 +3,24 @@ html, body{
     margin: 0;
     height: 100%;
     width: 100%;
-    background-image: url('https://cdn.discordapp.com/attachments/690155185321934898/1066054237575974952/Background.png');
+    background-image: url('https://cdn.discordapp.com/attachments/690155185321934898/1066390221383540746/Untitled_designs.png');
     background-size: cover;
     background-repeat: no-repeat;
  }
 
-.header {
+.header_navigation {
     width: 100%;
     display: flex;
     align-items: center;
     background-color: #eee3e1;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
 }
 
 .header_logo {
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: 36px;
 }
 
 .logo {
@@ -33,24 +33,27 @@ html, body{
 }
 
 .language {
-    margin-left: 10px;
+    margin-left: 34px;
 }
 
 .registration {
     margin-right: auto;
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 ul {
     list-style-type: none;
     overflow: hidden;
-    font-size: 26px;
-    font-family: Monospace;
+    font-size: 22px;
+    font-family: 'Noto Sans', sans-serif;
 }
   
 li {
     float: left;
-    padding: 0px 16px;
+}
+
+.navigation li {
+    padding: 0px 14px;
 }
 
 .language li{
@@ -60,14 +63,13 @@ li {
 li a {
     display: inline-block;
     position: relative;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     text-decoration: none;
 }
 
 li a::after {
     content: '';
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
     position: absolute;
     width: 100%;
     transform: scaleX(0);
@@ -86,10 +88,10 @@ li a:hover::after {
 
 .welcome {
     text-align: center;
-    margin-top: 180px;
+    margin-top: 120px;
     margin-bottom: auto;
-    font-size: 26px;
-    font-family: Monospace;
+    font-size: 28px;
+    font-family: 'Noto Sans', sans-serif;
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
@@ -98,7 +100,7 @@ li a:hover::after {
 
 .lower_welcome {
     display: flex;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .main_description {
@@ -109,10 +111,18 @@ li a:hover::after {
 
 .main_description_text_button {
     height: 40px;
-    width: 180px;
+    width: 160px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 5px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Noto Sans', sans-serif;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+}
+
+.main_description_text_button:hover {
+    background-color: #e9e1ee;
 }
 
 .welcome_images {
@@ -135,5 +145,109 @@ li a:hover::after {
     cursor: pointer;
     margin-left: auto;
     margin-right: 5px;
-    margin-top: 11px;
+    margin-top: 27px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Noto Sans', sans-serif;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+}
+
+.welcome_images_button:hover {
+    background-color: #e9e1ee;
+}
+
+.product_section{
+    background-color: #eee3e1;
+    border-style: solid;
+    border-width: 2px 0px 0px 0px;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+    margin-top: 100px;
+    margin-bottom: -10px;
+}
+
+.product_title{
+    text-align: center;
+    margin-top: 80px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
+}
+
+.product_menu {
+    display: flex;
+    justify-content: center;
+}
+
+.category {
+    display: block;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.category button {
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 22px;
+    font-family: Monospace;
+    margin-top: -13px;
+    font-family: 'Noto Sans', sans-serif;
+    border: none;
+}
+
+.category button:hover {
+    background-color: #e9e1ee;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.card {
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+    max-width: 240px;
+    margin: 10px;
+    margin-bottom: auto;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff;
+}
+  
+.price {
+    font-size: 22px;
+    font-family: 'Noto Sans', sans-serif;
+}
+  
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+  
+.card button:hover {
+    background-color: #e9e1ee;
+}
+
+.statistics_section {
+    background-color: #e1ecee;
+}
+
+.statistics_table {
+    padding-top: 100px;
+    justify-content: center;
 }

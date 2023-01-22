@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <script src = "jquery.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <header >
-        <div class="header">
+        <div class="header_navigation">
             <a href="file:///C:/Users/Emils%20Mafija/Documents/M%C4%81jaslapas/Zerloga_bekerija/index.html" class="header_logo">
                 <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
             </a>
@@ -21,7 +24,7 @@
                     <li><a href="">Produkcija</a></li>
                     <li><a href="">Kafejnīcas</a></li>
                     <li><a href="">Par mums</a></li>
-                    <li><a href="">Grozs</a></li>
+                    <li><a href="">Statistika</a></li>
                 </ul>
             </div>
 
@@ -44,15 +47,16 @@
     <main>
         <section>
             <div class="welcome">
-                <h1>
-                    Esat sveicināts Zerloga beķerejā!
+                <h1 style="font-size: 50px">
+                    Esat sveicināts <br>
+                    Zerloga beķerejā!
                 </h1>
                 <div class="lower_welcome">
                     <div class="main_description">
                         <p>
                             Šeit jūs varēsiet atrast pašus <br>
                             svaigākos, gardākos, jaunākos <br>
-                            maizes izstrādājumusno no visas <br>
+                            maizes izstrādājumus no visas <br>
                             Latvijas. Varat apciemot mūsu <br>
                             konditoreju vai arī pasūtīt <br>
                             produkciju uz mājām vai ofisu.
@@ -70,6 +74,70 @@
                         </button>
                     </div>
                 </div>  
+            </div>
+        </section>
+
+        <section class="product_section">
+            <div class="product_title">
+                <h1> Pats gardākais ko esat redzējuši </h1>
+            </div>
+            
+            <div class="product_menu">
+                <div class="category">
+                    <p><button>Tortes</button></p>
+                    <p><button>Kūkas</button></p>
+                    <p><button>Sāļās smalkmaizītes</button></p>
+                    <p><button>Saldās smalkmaizītes</button></p>
+                    <p><button>Plātsmaizes</button></p>
+                    <p><button>Kliņģeri</button></p>
+                    <p><button>Sezonas gardumi</button></p>
+                </div>
+
+                <div class="products">
+                    <div class="card">
+                        <img src="images/cupcake.jpg" alt="Strawberry cupcake" style="width:100%">
+                        <h1>Zemeņu kekss</h1>
+                        <p class="price">$1.99</p>
+                        <a href="">Sastāvdaļas</a>
+                        <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
+                    </div>
+                    <div class="card">
+                        <img src="images/cupcake.jpg" alt="Strawberry cupcake" style="width:100%">
+                        <h1>Zemeņu kekss</h1>
+                        <p class="price">$1.99</p>
+                        <a href="">Sastāvdaļas</a>
+                        <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
+                    </div>
+                    <div class="card">
+                        <img src="images/cupcake.jpg" alt="Strawberry cupcake" style="width:100%">
+                        <h1>Zemeņu kekss</h1>
+                        <p class="price">$1.99</p>
+                        <a href="">Sastāvdaļas</a>
+                        <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
+                    </div>
+                    <div class="card">
+                        <img src="images/cupcake.jpg" alt="Strawberry cupcake" style="width:100%">
+                        <h1>Zemeņu kekss</h1>
+                        <p class="price">$1.99</p>
+                        <a href="">Sastāvdaļas</a>
+                        <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
+                    </div>
+                    <div class="card">
+                        <img src="images/cupcake.jpg" alt="Strawberry cupcake" style="width:100%">
+                        <h1>Zemeņu kekss</h1>
+                        <p class="price">$1.99</p>
+                        <a href="">Sastāvdaļas</a>
+                        <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics_section">
+            <div class="statistics_table">
+                <div>
+                    <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
+                </div>
             </div>
         </section>
     </main>
