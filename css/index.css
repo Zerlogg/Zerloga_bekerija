@@ -6,6 +6,7 @@ html, body{
     background-image: url('https://cdn.discordapp.com/attachments/690155185321934898/1066390221383540746/Untitled_designs.png');
     background-size: cover;
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
  }
 
 .header_navigation {
@@ -160,7 +161,7 @@ li a:hover::after {
     background-color: #eee3e1;
     border-style: solid;
     border-width: 2px 0px 0px 0px;
-    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+    box-shadow: 0px -12px 8px -8px rgba(0, 0, 0, 0.63);
     margin-top: 100px;
     margin-bottom: -10px;
 }
@@ -209,7 +210,7 @@ li a:hover::after {
     margin-bottom: 100px;
 }
 
-.card {
+.product_card {
     box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
     max-width: 240px;
     margin: 10px;
@@ -224,7 +225,7 @@ li a:hover::after {
     font-family: 'Noto Sans', sans-serif;
 }
   
-.card button {
+.product_card button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -239,15 +240,157 @@ li a:hover::after {
     border-width: 1px 1px 1px 1px;
 }
   
-.card button:hover {
+.product_card button:hover {
     background-color: #e9e1ee;
 }
 
 .statistics_section {
+    justify-content: center;
     background-color: #e1ecee;
+}
+
+.statistics_title {
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
 }
 
 .statistics_table {
     padding-top: 100px;
+    text-align: center;
+    background-color: rgb(81, 156, 156);
+    width: 1000px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bakery_section {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #e5eee1;
+}
+
+.bakery_title {
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
+}
+
+.bakery_all_info {
+    display: flex;
     justify-content: center;
+}
+
+.bakery_info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.scene {
+    display: inline-block;
+    margin: 30px 0;
+    perspective: 1500px;
+}
+  
+.bakery_card {
+    position: relative;
+    min-width: 420px;
+    min-height: 510px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: transform 1s;
+}
+  
+.bakery_card.is-flipped {
+    transform: rotateY(-180deg);
+}
+  
+.bakery_face {
+    position: absolute;
+    min-width: 420px;
+    min-height: 510px;
+    width: auto;
+    height: auto;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 22px;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+  
+.bakery_face_bakerys {
+    background: rgb(255, 255, 255);
+}
+
+.bakery_card_description {
+    display: list-item;
+    text-align: left;
+    margin: 15px 50px;
+    padding: 5px 2px;
+}
+  
+.bakery_face_work_time {
+    background: rgb(255, 255, 255);
+    transform: rotateY(180deg);
+}
+
+.bakery_map {
+    padding: 14px 20px;
+}
+
+.page_footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #eee3e1;
+    border-style: solid;
+    border-width: 2px 0px 0px 0px;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+}
+
+.footer_logo{
+    justify-content: center;
+    padding: 5px 60px;
+    padding-left: 0px;
+}
+
+.footer_info {
+    display: flex;
+    font-size: 22px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.footer_info a {
+    padding: 0px 80px;
+    padding-bottom: 0px;
+}
+
+.footer_info p {
+    padding: 41px 80px;
+}
+
+.footer_contact a{
+    padding: 0px 7px;
+    text-decoration: none;
+    color: #000;
+}
+
+.footer_contact{
+    padding: 65px 0px;
+}
+
+.footer_media a{
+    padding: 0px 6px;
+    text-decoration: none;
+    color: #000;
+}
+
+.footer_media{
+    padding: 65px 0px;
 }
