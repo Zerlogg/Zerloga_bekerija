@@ -1,8 +1,6 @@
 html, body{
     padding: 0;
     margin: 0;
-    height: 100%;
-    width: 100%;
     background-color: #e1ecee;
     background-size: cover;
     background-repeat: no-repeat;
@@ -87,40 +85,85 @@ li a:hover::after {
     transform-origin: center;
 }
 
+.main {
+    min-height: 680px;
+}
+
 .contacts {
     font-family: 'Noto Sans', sans-serif;
     justify-content: center;
-    padding: 60px 0px;
-    text-align: center;
+    padding: 120px 0px;
+    display: flex;
 }
 
 .contact_info {
-    display: flex;
-    justify-content: center;
+    margin: 0px 80px;
 }
 
 .email {
-    margin: 0px 80px;
     display: flex;
-    text-align: left;
 }
 
 .email_logo {
-    width: 80px;
-    height: 80px;
-    padding: 26px 0px;
+    width: 30px;
+    height: 30px;
+    padding-top: 19px;
 }
 
 .phone_number {
-    margin: 0px 80px;
     display: flex;
-    text-align: left;
 }
 
 .telephone_logo {
-    width: 70px;
-    height: 70px;
-    padding: 28px 0px;
+    width: 30px;
+    height: 30px;
+    padding-top: 19px;
+}
+
+.contact_form {
+    width: 500px;
+}
+
+.contact_email_subject {
+    padding-bottom: 10px;
+    justify-content: left;
+    display: flex;
+}
+
+.c_email {
+    width: 100%;
+    margin-right: 5px;
+    height: 30px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    padding-left: 4px;
+}
+
+.c_subject {
+    width: 100%;
+    margin-left: 5px;
+    height: 30px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    padding-left: 4px;
+}
+
+.c_message {
+    min-width: 487px;
+    min-height: 180px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    padding: 4px 6px;
+    margin-top: 2px;
+}
+
+.contact_button {
+    justify-content: left;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 6px 0px;
+    width: 100px;
+    height: 36px;
+    font-size: 18px;
 }
 
 .page_footer {
@@ -135,7 +178,7 @@ li a:hover::after {
 
 .footer_logo{
     justify-content: center;
-    padding: 5px 60px;
+    padding: 40px 60px;
     padding-left: 0px;
 }
 
@@ -147,29 +190,32 @@ li a:hover::after {
 
 .footer_info a {
     padding: 0px 80px;
-    padding-bottom: 0px;
 }
 
 .footer_info p {
     padding: 41px 80px;
 }
 
-.footer_contact a{
+.footer_contact a {
     padding: 0px 7px;
+    padding-bottom: 30px;
     text-decoration: none;
     color: #000;
+    display: block;
 }
 
 .footer_contact{
-    padding: 65px 0px;
+    padding-top: 65px;
 }
 
 .footer_media a{
     padding: 0px 6px;
+    padding-bottom: 30px;
     text-decoration: none;
     color: #000;
+    display: block;
 }
 
 .footer_media{
-    padding: 65px 0px;
+    padding-top: 65px;
 }

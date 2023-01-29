@@ -38,51 +38,65 @@
 
             <div class="registration">
                 <ul>
-                    <li style="float:right"><a class="active" href="#about">Ienākt</a></li>
+                    <li style="float:right"><a class="active" href="login.html">Ienākt</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <main>
-        <section>
+    <main class="main">
+        <section style="margin-top: 30px;">
             <div class="contacts">
                 <div class="contact_info">
+                    <h1 style="font-size:26px;">Atnāc ciemos</h1>
+                    <p style="font-size:20px;">Gaidīsim jūs mūsu kafejnīcā Rīgā, <br>
+                    Matīsa ielā 40/42. Ja maltīti vēlaties <br>
+                    baudīt birojā vai mājās, piezvaniet <br>
+                    mums, lai vienotos par ērtāko <br>
+                    pasūtījuma piegādes laiku un vietu.
+                    </p>
+                    
                     <div class="email">
                         <img src="images/mail_icon.png" alt="e-pasta logo" class="email_logo">
-                        <p style="font-size:28px; padding-left: 14px;">E-pasts<br>
-                        zerloga@bekerija.lv</p>
+                        <p style="font-size:20px; padding-left: 10px;">zerloga@bekerija.lv</p>
                     </div>
                     <div class="phone_number">
                         <img src="images/telephone_icon.png" alt="telefona logo" class="telephone_logo">
-                        <p style="font-size:28px; padding-left: 14px;">Telefona numurs<br>
-                        +317 20 417 595</p>
+                        <p style="font-size:20px; padding-left: 10px;">+317 20 417 595</p>
                     </div>
                 </div>
 
                 <div class="contact_form">
-
+                    <h1 style="font-size:26px;">Sazinies ar mums</h1>
+                    <div class="contact_email_subject">
+                        <input type="email" name="contact_email" placeholder="E-pasts" class="c_email" required>
+                        <input type="text" name="contact_subject" placeholder="Tēma" class="c_subject" required>
+                    </div>
+                    <div class="contact_message_form">
+                        <textarea name="contact_message" placeholder="Ziņojums" class="c_message" required></textarea>
+                    </div>
+                    <button class="contact_button">Nosūtīt</button>
                 </div>
             </div>
         </section>
-
-        <footer class="page_footer">
-            <div class="footer_logo">
-                <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
-            </div>
-
-            <div class="footer_info">
-                <div class="footer_contact">
-                    <a href=""> zerloga@bekerija.lv </a>
-                    <a href=""> +317 20 417 595 </a>
-                </div>
-                    <p>©Zerloga bekereja 2023</p>
-                <div class="footer_media">
-                    <a href=""> Instagram </a>
-                    <a href=""> Facebook </a>
-                </div>
-            </div>
-        </footer>
     </main>
+
+    <footer class="page_footer">
+        <div class="footer_logo">
+            <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
+        </div>
+
+        <div class="footer_info">
+            <div class="footer_contact">
+                <a href=""> zerloga@bekerija.lv </a>
+                <a href=""> +317 20 417 595 </a>
+            </div>
+                <p>©Zerloga bekereja 2023</p>
+            <div class="footer_media">
+                <a href=""> Instagram </a>
+                <a href=""> Facebook </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
