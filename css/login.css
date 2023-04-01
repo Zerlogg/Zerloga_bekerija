@@ -1,4 +1,4 @@
-html, body{
+html, body {
     padding: 0;
     margin: 0;
     height: 100%;
@@ -7,7 +7,9 @@ html, body{
     background-size: cover;
     background-repeat: no-repeat;
     scroll-behavior: smooth;
- }
+}
+
+/*header*/
 
 .header_navigation {
     width: 100%;
@@ -32,27 +34,29 @@ html, body{
     min-height: 700px;
 }
 
-/*registracija*/
+/*registration*/
 
 #registration {
     text-align: center;
     padding-top: 2%;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
-    margin-bottom: 10%;
-    width: 30%;
+    margin-bottom: 1%;
     padding: 15px;
+    width: 30%;
     display: list-item;
     border: none;
     background: #f1f1f1;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
     background-color: #ddd;
     outline: none;
 }
@@ -77,31 +81,11 @@ hr {
     text-align: center;
 }
 
-/*pieslēgties logs*/
+/*login*/
 
 #signin {
     text-align: center;
     padding-top: 2%;
-}
-
-input[type=text], input[type=password] {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    width: 30%;
-    padding: 15px;
-    display: list-item;
-    border: none;
-    background: #f1f1f1;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 18px;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
 }
 
 .signin_button {
@@ -118,29 +102,11 @@ input[type=text]:focus, input[type=password]:focus {
     text-align: center;
 }
 
-/*mainīt paroli logs*/
+/*change password*/
 
 #change_password {
     text-align: center;
     padding: 2%;
-}
-
-input[type=text], input[type=password] {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    width: 30%;
-    padding: 15px;
-    display: list-item;
-    border: none;
-    background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
 }
 
 .change_button {
@@ -153,29 +119,11 @@ input[type=text]:focus, input[type=password]:focus {
     font-size: 18px;
 }
 
-/*jauna parole logs*/
+/*new password*/
 
 #new_password {
     text-align: center;
     padding: 2%;
-}
-
-input[type=text], input[type=password] {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    width: 30%;
-    padding: 15px;
-    display: list-item;
-    border: none;
-    background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
 }
 
 .new_password_button {
@@ -187,6 +135,8 @@ input[type=text]:focus, input[type=password]:focus {
     font-family: 'Noto Sans', sans-serif;
     font-size: 18px;
 }
+
+/*footer*/
 
 .page_footer {
     width: 100%;

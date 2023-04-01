@@ -1,3 +1,10 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+    header("Location: ./");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,59 +21,63 @@
 <body>
     <header>
         <div class="header_navigation">
-            <a href="file:///C:/Users/Emils%20Mafija/Documents/M%C4%81jaslapas/Zerloga_bekerija/index.html" class="header_logo">
+            <a href="./index.php" class="header_logo">
                 <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
             </a>
         </div>
     </header>
 
     <main class="main">
-        <form action="" method="POST">
+        <form action="login/signup.php" method="post" autocomplete="off">
             <div id="registration" style="display:none;">
                 <h1>Reģistrācija</h1>
                 <div class="signin_option">
                     <p>Profils jau izveidots? <a style="text-decoration: underline; cursor: pointer;" onclick="pieslegties()">Pieslēgties</a>.</p>
                 </div>
-                <hr>
-            
-                <label for="e-pasts"><b>E-pasts</b></label>
-                <input type="text" placeholder="Ievadiet e-pastu" name="email" id="email" required>
+                
+                <hr style="margin-bottom: 30px">
+                <label for="username"><b>Lietotājvārds</b></label>
+                <input type="text" placeholder="Ievadiet lietotājvārdu" name="username" id="username" required value="">
 
-                <label for="e-pasts"><b>Atkārtojiet E-pastu</b></label>
-                <input type="text" placeholder="Ievadiet e-pastu vēlreiz" name="email_confirm" id="email_repeat" required onpaste="return false;">
-
-                <label for="lietotajvards"><b>Lietotājvārds</b></label>
-                <input type="text" placeholder="Ievadiet lietotājvārdu" name="username" id="username" required>
+                <label for="email"><b>E-pasts</b></label>
+                <input type="email" placeholder="Ievadiet e-pastu" name="email" id="email" required value="" style="">
             
-                <label for="parole"><b>Parole</b></label>
-                <input type="password" placeholder="Ievadiet paroli" name="password" id="password" required>
+                <label for="password"><b>Parole</b></label>
+                <input type="password" placeholder="Ievadiet paroli" name="password" id="password" required value="">
             
-                <label for="atkartota-parole"><b>Atkārtojiet paroli</b></label>
-                <input type="password" placeholder="Ievadiet paroli vēlreiz" name="password_confirm" id="password_repeat" required onpaste="return false;">
+                <label for="confirmpassword"><b>Atkārtojiet paroli</b></label>
+                <input type="password" placeholder="Ievadiet paroli vēlreiz" name="confirmpassword" id="confirmpassword" required value="" onpaste="return false;">
 
                 <hr>
                 <p>Veidojot profilu jūs piekrītat <a href="" style="color: black;">lietošanas un privātuma noteikumiem</a>.</p>
-                <button type="submit" class="registration_button">Reģistrēties</button>
+                <button class="registration_button" type="submit" name="submit">Reģistrēties</button>
             </div>
         </form>
 
-        <form action="" method="POST">
+        <form action="login/signin.php" method="post" autocomplete="off">
             <div id="signin" style="margin-top: 60px;">
                 <h1>Pieslēgties</h1>
+                <?php
+                if (isset($_SESSION['message'])) {
+                    echo '<p class="msg"> ' . $_SESSION['message'] .'</p>';
+                }
+                unset($_SESSION['message']);
+                ?>
+                
                 <div class="registration_option">
                     <p>Neesiet vēl reģistrējušies? <a style="color: black; cursor: pointer; text-decoration: underline;" onclick="registreties()">Reģistrēties</a>.</p>
                 </div>
-                <hr>
+                <hr style="margin-bottom: 30px">
 
-                <label for="lietotajvards"><b>Lietotājvārds</b></label>
-                <input type="text" placeholder="Ievadiet lietotājvārdu" name="username" id="username" required onpaste="return false;">
+                <label for="usernameemail"><b>Lietotājvārds vai e-pasts</b></label>
+                <input type="text" placeholder="Ievadiet lietotājvārdu vai e-pastu" name="usernameemail" id = "usernameemail" required value="">
             
-                <label for="parole"><b>Parole</b></label>
-                <input type="password" placeholder="Ievadiet paroli" name="password" id="password" required onpaste="return false;">
+                <label for="password"><b>Parole</b></label>
+                <input type="password" placeholder="Ievadiet paroli" name="password" id ="password" required value="">
                 <hr>
                 
                 <p><a style="color: black; cursor: pointer; text-decoration: underline;" onclick="atjaunot_paroli()">Aizmirsāt lietotājvārdu un paroli</a>?</p>
-                <button type="submit" name="Pieslegties" class="signin_button">Pieslēgties</button>
+                <button  class="signin_button" type="submit" name="submit">Pieslēgties</button>
             </div>
         </form>
 
@@ -82,7 +93,7 @@
                 <button type="submit" class="change_button" onclick="mainit_paroli()">Atjaunot</button>
           </div>
 
-        <form action="login.html">
+        <form action="login.php">
             <div id="new_password" style="display:none; margin-top: 70px;">
                 <h1>Mainīt paroli</h1>
                 <p>Ievadiet jauno paroli jūsu profilam.</p>

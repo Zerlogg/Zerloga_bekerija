@@ -14,17 +14,17 @@
 <body>
     <header>
         <div class="header_navigation">
-            <a href="file:///C:/Users/Emils%20Mafija/Documents/M%C4%81jaslapas/Zerloga_bekerija/index.html" class="header_logo">
+            <a href="./index.php" class="header_logo">
                 <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
             </a>
 
             <div class="navigation">
                 <ul>
-                    <li><a href="index.html">Sākums</a></li>
+                    <li><a href="index.php">Sākums</a></li>
                     <li><a href="#produkti">Produkcija</a></li>
                     <li><a href="#statistika">Statistika</a></li>
                     <li><a href="#beķerejas">Beķerejas</a></li>
-                    <li><a href="contact.html">Kontakti</a></li>
+                    <li><a href="contact.php">Kontakti</a></li>
                 </ul>
             </div>
 
@@ -38,7 +38,7 @@
 
             <div class="registration">
                 <ul>
-                    <li style="float:right"><a class="active" href="login.html">Ienākt</a></li>
+                    <li style="float:right"><a class="active" href="login.php">Ienākt</a></li>
                 </ul>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="contacts">
                 <div class="contact_info">
                     <h1 style="font-size:26px;">Atnāc ciemos</h1>
-                    <p style="font-size:20px;">Gaidīsim jūs mūsu kafejnīcā Rīgā, <br>
+                    <p style="font-size:20px; margin: 16px 0px;">Gaidīsim jūs mūsu kafejnīcā Rīgā, <br>
                     Matīsa ielā 40/42. Ja maltīti vēlaties <br>
                     baudīt birojā vai mājās, piezvaniet <br>
                     mums, lai vienotos par ērtāko <br>
@@ -58,11 +58,11 @@
                     
                     <div class="email">
                         <img src="images/mail_icon.png" alt="e-pasta logo" class="email_logo">
-                        <p style="font-size:20px; padding-left: 10px;">zerloga@bekerija.lv</p>
+                        <p style="font-size:20px; padding-left: 10px; margin: 10px 0px;">zerloga@bekerija.lv</p>
                     </div>
                     <div class="phone_number">
                         <img src="images/telephone_icon.png" alt="telefona logo" class="telephone_logo">
-                        <p style="font-size:20px; padding-left: 10px;">+317 20 417 595</p>
+                        <p style="font-size:20px; padding-left: 10px; margin: 10px 0px;">+317 20 417 595</p>
                     </div>
                 </div>
 
