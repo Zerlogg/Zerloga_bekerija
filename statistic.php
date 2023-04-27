@@ -35,7 +35,13 @@
                     </div>
                     <div class="statistics_card_info">
                         <h1>Produkta iegādes skaits</h1>
-                        <p class="statistics_product_count">1</p>
+                        <?php
+                        $id = $fetch_product['id'];
+                        $sql = "SELECT SUM(quantity) AS q FROM user_cart as uc INNER JOIN products as p ON uc.product_id = p.id WHERE uc.product_id = '$id';";
+                        $result = mysqli_query($conn, $sql);
+                        $result = mysqli_fetch_assoc($result);
+                        ?>
+                        <p class="statistics_product_count"><?= $result['q'] ?></p>
                     </div>
                     <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                     <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
