@@ -43,7 +43,7 @@ body{
     height: 150px;
 }
 
-.navigation {
+.navbar {
     margin: 0px;
 }
 
@@ -54,6 +54,16 @@ body{
 .registration {
     margin-right: auto;
     margin-left: 40px;
+}
+
+.product_count {
+    background-color: #ff9595;
+    padding: 0.5px 9px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    text-decoration: none;
+    outline: none;
+    pointer-events: none;
 }
 
 ul {
@@ -67,7 +77,7 @@ li {
     float: left;
 }
 
-.navigation li {
+.navbar li {
     padding: 0px 14px;
 }
 
@@ -99,6 +109,43 @@ li a::after {
 li a:hover::after {
     transform: scaleX(1);
     transform-origin: center;
+}
+
+/*product message pop-up*/
+
+.message{
+    position: fixed;
+    top: 18%; left: 10px;
+    z-index: 11;
+    background-color: white;
+    padding: 20px 15px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Noto Sans', sans-serif;
+    gap: 20px;
+    border-radius: 5px;
+ }
+ 
+ .message span{
+    color:black;
+    font-size: 25px;
+ }
+ 
+ .message i{
+    color:rgb(255, 0, 0);
+    cursor: pointer;
+ }
+ 
+ .message i:hover{
+    color:rgb(0, 0, 0);
+ }
+
+ .fa-close:before, .fa-multiply:before, .fa-remove:before, .fa-times:before, .fa-xmark:before {
+    content: "X";
+    font-style: normal;
+    font-size: 25px;
 }
 
 /*welcome*/
@@ -258,7 +305,7 @@ li a:hover::after {
 
 /*products*/
 
-.product_section{
+.products{
     background-color: #eee3e1;
     border-style: solid;
     border-width: 2px 0px 0px 0px;
@@ -290,7 +337,7 @@ li a:hover::after {
     background-color: rgb(255, 255, 255);
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 200px;
     font-size: 22px;
     font-family: Monospace;
     margin-top: -13px;
@@ -302,7 +349,7 @@ li a:hover::after {
     background-color: #e9e1ee;
 }
 
-.products {
+.product_info {
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: center;
@@ -409,7 +456,6 @@ li a:hover::after {
 /*statistics*/
 
 .statistics_section {
-    justify-content: center;
     background-color: #e1ecee;
 }
 
@@ -418,16 +464,81 @@ li a:hover::after {
     padding-top: 40px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 28px;
+    padding-bottom: 20px;
 }
 
 .statistics_table {
-    padding-top: 100px;
     text-align: center;
-    background-color: rgb(81, 156, 156);
-    width: 1000px;
-    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.statistics_category {
+    display: block;
+    margin-top: 20px;
+    padding-bottom: 80px;
+}
+
+.statistics_category button {
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    font-size: 22px;
+    font-family: Monospace;
+    margin-top: -13px;
+    font-family: 'Noto Sans', sans-serif;
+    border: none;
+}
+
+.statistics_category button:hover {
+    background-color: #e9e1ee;
+}
+
+.statistics_info {
+    display: block;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 100px;
+    margin-left: 10px;
+}
+
+.statistics_card {
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 500px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.statistics_card_info {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff;
+}
+
+.statistics_product_count {
+    padding: 0.5px 9px;
+    border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid #000000;
+    text-decoration: none;
+    outline: none;
+    pointer-events: none;
+    font-size: 22px;
+    max-width: 140px;
 }
 
 /*bakery info*/
@@ -562,3 +673,10 @@ li a:hover::after {
 .footer_media{
     padding: 65px 0px;
 }
+
+.products .product_info .product_card button.disabled{
+    pointer-events: none;
+    opacity: .5;
+    user-select: none;
+    background-color: #f8aeae;
+ }

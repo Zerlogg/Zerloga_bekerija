@@ -1,0 +1,187 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    background-color: #e1ecee;
+    background-size: cover;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+ }
+
+ /*header*/
+
+ .header_navigation {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #eee3e1;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.63);
+    top: 0;
+    z-index: 10;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header_logo {
+    margin-left: auto;
+    margin-right: 36px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.navbar {
+    margin: 0px;
+}
+
+.language {
+    margin-left: 34px;
+}
+
+.registration {
+    margin-right: auto;
+    margin-left: 40px;
+}
+
+.product_count {
+    background-color: #ff9595;
+    padding: 0.5px 9px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    text-decoration: none;
+    outline: none;
+    pointer-events: none;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    font-size: 22px;
+    font-family: 'Noto Sans', sans-serif;
+}
+  
+li {
+    float: left;
+}
+
+.navbar li {
+    padding: 0px 14px;
+}
+
+.language li{
+    padding: 0px 10px;
+}
+
+li a {
+    display: inline-block;
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+}
+
+li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    transform-origin: center;
+    transition: transform 0.4s ease-out;
+}
+  
+li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+/*shopping cart*/
+
+.shopping-cart table{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    margin-top: 220px;
+    margin-bottom: 60px;
+    font-family: 'Noto Sans', sans-serif;
+ }
+
+ .shopping-cart table tr th{
+    padding: 15px;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    background-color: #d3d3d3;
+ }
+ 
+ .shopping-cart table tr td{
+    padding: 15px;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+ }
+ 
+ .shopping-cart table input[type="number"]{
+    padding: 6px 10px;
+    font-size: 20px;
+    color: black;
+    width: 66px;
+    border: 1px solid #000000;
+ }
+ 
+ .shopping-cart table input[type="submit"]{
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 1px;
+    border: 1px solid #000000;
+ }
+ 
+ .shopping-cart table input[type="submit"]:hover{
+    background-color: #e5eee1;
+ }
+
+ .btn,
+ .delete-btn{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    color:black;
+    font-size: 20px;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+    border: 1px solid #000000;
+    text-decoration: none;
+}
+
+ .btn:hover{
+   background-color: #e5eee1;
+}
+
+.delete-btn:hover{
+    background-color: #f8aeae;
+ }
+
+ .shopping-cart .checkout-btn a.disabled{
+    pointer-events: none;
+    opacity: .5;
+    user-select: none;
+    background-color: #f8aeae;
+ }
+ 

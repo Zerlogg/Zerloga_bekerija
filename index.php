@@ -1,11 +1,32 @@
 <?php
 require 'config.php';
-require_once ('./php/component.php');
 if(!empty($_SESSION["id"])){
-  $id = $_SESSION["id"];
+  $id = $_SESSION["id"]["id"];
   $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
   $row = mysqli_fetch_assoc($result);
 }
+
+if(isset($_POST['add_to_cart'])){
+
+    $product_id = $_POST['product_id'];
+    $id = $_SESSION["id"]['id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = 1;
+ 
+    $select_cart = mysqli_query($conn, "SELECT * FROM `user_cart` WHERE user_id = '$id' AND product_id = '$product_id'");
+ 
+    if(mysqli_num_rows($select_cart) > 0){
+        $message[] = 'Prece jau ir pievienota grozam';
+    }else{
+        $sql = "INSERT INTO `user_cart`(`user_id`, `product_id`, `quantity`) VALUES ('$id','$product_id', '$product_quantity')";
+        $insert_product = mysqli_query($conn, $sql);
+        $message[] = 'Prece tika veiksmīgi pievienota';
+    }
+ 
+ }
+
 ?>
 
 <!DOCTYPE html>
@@ -18,58 +39,21 @@ if(!empty($_SESSION["id"])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <script src = "js/script.js" defer></script>
     <title>Zerloga beķerija</title>
 </head>
 <body>
-    <header>
-        <div class="header_navigation" id="myHeader">
-            <a href="./index.php" class="header_logo">
-                <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
-            </a>
 
-            <div class="navigation">
-                <ul>
-                    <li><a href="./index.php">Sākums</a></li>
-                    <li><a href="#produkti">Produkcija</a></li>
-                    <li><a href="#statistika">Statistika</a></li>
-                    <li><a href="#beķerejas">Beķerejas</a></li>
-                    <li><a href="contact.php">Kontakti</a></li>
-                </ul>
-            </div>
+<?php
 
-            <div class="language">
-                <ul>
-                    <li style="float:right"><a class="active" href="#about">ENG</a></li>
-                    <li style="float:right"><a class="active" href="#about">RU</a></li>
-                    <li style="float:right"><a class="active" href="#about">LV</a></li>
-                </ul>
-            </div>
+if(isset($message)){
+   foreach($message as $message){
+      echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i></div>';
+   };
+};
 
-            <div class="registration">
-                <ul>
-                    <li style="padding-right: 30px;">
-                        <?php
-                            if (isset($row['username'])) {
-                                echo '<a href="basket.php">Grozs</a>';
-                            } else{ 
-                                echo '';
-                            }
-                        ?>
-                    </li>
-                    <li style="float: left;">
-                        <?php
-                            if (isset($row['username'])) {
-                                echo '<a href="login/logout.php">Iziet</a>';
-                            } else{ 
-                                echo '<a class="active" href="login.php">Ienākt</a>';
-                            }
-                        ?>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
+?>
+
+    <?php include 'header.php'; ?>
 
     <main class="main">
         <section>
@@ -77,8 +61,8 @@ if(!empty($_SESSION["id"])){
                 <div class="main_description">
                     <h1 style="font-size: 50px; margin-bottom: 30px; animation: main_welcome_text 1.6s; position: relative;">
                     <?php
-                        if (isset($row['username'])) {
-                            echo 'Esiet sveicināti <br> Zerloga beķerejā, <br>'.$row["username"].'!';
+                        if (isset($_SESSION['id'])) {
+                            echo 'Esiet sveicināti <br> Zerloga beķerejā, <br>'.$_SESSION['id']['username'].'!';
                         } else{
                             echo 'Esiet sveicināti <br> Zerloga beķerejā!';
                         }
@@ -139,132 +123,9 @@ if(!empty($_SESSION["id"])){
             </div>
         </section>
 
-        <section class="product_section" id="produkti">
-            <div class="product_title">
-                <h1> Pats gardākais ko esat redzējuši </h1>
-            </div>
-                
-            <div class="product_menu">
-                <div class="category">
-                    <p><button onclick="tortes()">Tortes</button></p>
-                    <p><button onclick="kukas()"> Kūkas</button></p>
-                    <p><button onclick="salas_smalkmaizites()">Sāļās smalkmaizītes</button></p>
-                    <p><button onclick="saldas_smalkmaizites()">Saldās smalkmaizītes</button></p>
-                    <p><button onclick="platsmaizes()">Plātsmaizes</button></p>
-                    <p><button onclick="klingeri()">Kliņģeri</button></p>
-                    <p><button onclick="sezonas_gardumi()">Sezonas gardumi</button></p>
-                </div>
-
-                <div id="tortes">
-                    <div class="products">
-                        <div class="product_card">
-                            <form action="index.php" method="post">
-                                <img src="images/cupcake.png" alt="Zemeņu kekss" style="width:100%">
-                                <h1>Zemeņu kekss</h1>
-                                <p class="price">€0.99</p>
-                                <a data-modal-target="#modal" style="cursor: pointer; text-decoration: underline;">Sastāvdaļas</a>
-                                <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                            </form>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/Chocolate_cake.png" alt="Šokolādes kūka" style="width:100%">
-                            <h1>Šokolādes kūka</h1>
-                            <p class="price">€1.99</p>
-                            <a data-modal-target="#chocolate_cake" style="cursor: pointer; text-decoration: underline;">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button type="submit" name="add">Pievienot grozam</button></p>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal" id="modal">
-                    <div class="modal-header">
-                        <div class="title">Zemeņu keksa sastāvdaļas</div>
-                        <button data-close-button class="close-button">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        sas
-                    </div>
-                </div>
-                <div id="overlay"></div>
-
-                <div class="modal" id="chocolate_cake">
-                    <div class="modal-header">
-                        <div class="title">Šokolādes kūkas sastāvdaļas</div>
-                        <button data-close-button class="close-button">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        sas2
-                    </div>
-                </div>
-                <div id="overlay"></div>
-
-                <div id="kukas" style="display:none;">
-                    <div class="products">
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                        <div class="product_card">
-                            <img src="images/cupcake.png" alt="Strawberry cupcake" style="width:100%">
-                            <h1>Zemeņu kekss</h1>
-                            <p class="price">€1.99</p>
-                            <a href="">Sastāvdaļas</a>
-                            <p style="margin-bottom: auto;"><button>Pievienot grozam</button></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="statistics_section" id="statistika">
-            <div class="statistics_title">
-                <h1>Kas mūsu klientiem garšo vislabāk </h1>
-            </div>
-
-            <div class="statistics_table">
-                <div>
-                    <p><button>Statistika</button></p>
-                </div>
-            </div>
-        </section>
+        <?php include 'products.php'; ?>            
+        
+        <?php include 'statistic.php'; ?>
 
         <section class="bakery_section" id="beķerejas">
             <div class="bakery_title">
@@ -278,7 +139,7 @@ if(!empty($_SESSION["id"])){
                                 <h1>Beķerejas</h1>
                                 <p class="bakery_card_description">Miķeļa iela 3</p>
                                 <p class="bakery_card_description">Dzirnavu iela 105</p>
-                                <p class="bakery_card_description">Ģertrūdes iela 92-98</p>
+                                <p class="bakery_card_description">Ģertrūdes iela 92</p>
                                 <p class="bakery_card_description">Zaubes iela 9a</p>
                                 <p class="bakery_card_description">Artilērijas iela 58</p>
                                 <p class="bakery_card_description">Zirņu iela 73</p>
@@ -324,5 +185,7 @@ if(!empty($_SESSION["id"])){
             </div>
         </div>
     </footer>
+    
+    <script src = "js/script.js" defer></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+require 'config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,37 +16,8 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="header_navigation">
-            <a href="./index.php" class="header_logo">
-                <img src="images/Logo.png" alt="Beķerijas logo" class="logo">
-            </a>
-
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.php">Sākums</a></li>
-                    <li><a href="#produkti">Produkcija</a></li>
-                    <li><a href="#statistika">Statistika</a></li>
-                    <li><a href="#beķerejas">Beķerejas</a></li>
-                    <li><a href="contact.php">Kontakti</a></li>
-                </ul>
-            </div>
-
-            <div class="language">
-                <ul>
-                    <li style="float:right"><a class="active" href="#about">ENG</a></li>
-                    <li style="float:right"><a class="active" href="#about">RU</a></li>
-                    <li style="float:right"><a class="active" href="#about">LV</a></li>
-                </ul>
-            </div>
-
-            <div class="registration">
-                <ul>
-                    <li style="float:right"><a class="active" href="login.php">Ienākt</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    
+    <?php include 'header.php'; ?>
 
     <main class="main">
         <section style="margin-top: 30px;">
