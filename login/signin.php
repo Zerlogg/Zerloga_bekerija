@@ -19,13 +19,13 @@ if(isset($_POST["submit"])){
     }
     else{
       echo
-      $_SESSION['message'] = 'Wrong password';
+      $_SESSION['message'] = 'Nepareiza parole';
       header("Location: ../login.php");
     }
   }
   else{
     echo
-    $_SESSION['message'] = 'User Not Registered';
+    $_SESSION['message'] = 'Lietotājs nav reģistrēts';
     header("Location: ../login.php");
   }
 }

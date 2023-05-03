@@ -19,7 +19,8 @@ if(isset($_POST['add_product'])){
    $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
    $p_image_folder = 'images/'.$p_image;
 
-   $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, price, description, category, image) VALUES('$p_name', '$p_price', '$p_description', '$p_category', '$p_image')") or die('query failed');
+   $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, price, description, category, image)
+   VALUES('$p_name', '$p_price', '$p_description', '$p_category', '$p_image')") or die('query failed');
 
    if($insert_query){
       move_uploaded_file($p_image_tmp_name, $p_image_folder);
@@ -34,10 +35,10 @@ if(isset($_GET['delete'])){
    $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('query failed');
    if($delete_query){
       header('location:admin.php');
-      $message[] = 'product has been deleted';
+      $message[] = 'Produkts tika veiksmīgi izdzēsts';
    }else{
       header('location:admin.php');
-      $message[] = 'product could not be deleted';
+      $message[] = 'Nevarēja izdzēst produktu';
    };
 };
 
@@ -51,14 +52,15 @@ if(isset($_POST['update_product'])){
    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
    $update_p_image_folder = 'images/'.$update_p_image;
 
-   $update_query = mysqli_query($conn, "UPDATE `products` SET name = '$update_p_name', price = '$update_p_price', description = '$update_p_description', category = '$update_p_category', image = '$update_p_image' WHERE id = '$update_p_id'");
+   $update_query = mysqli_query($conn, "UPDATE `products` SET name = '$update_p_name', price = '$update_p_price',
+   description = '$update_p_description', category = '$update_p_category', image = '$update_p_image' WHERE id = '$update_p_id'");
 
    if($update_query){
       move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
-      $message[] = 'product updated succesfully';
+      $message[] = 'Produkts atjaunots veiksmīgi';
       header('location:admin.php');
    }else{
-      $message[] = 'product could not be updated';
+      $message[] = 'Nevarēja atjaunot produktu';
       header('location:admin.php');
    }
 

@@ -314,6 +314,11 @@ li a:hover::after {
     margin-bottom: -10px;
 }
 
+.search_products {
+    display: flex;
+    margin-left: 350px;
+}
+
 .product_title{
     text-align: center;
     margin-top: 80px;
@@ -323,7 +328,7 @@ li a:hover::after {
 
 .product_menu {
     display: flex;
-    justify-content: center;
+    margin-left: 350px;
 }
 
 .category {

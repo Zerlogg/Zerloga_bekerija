@@ -41,17 +41,19 @@ require 'config.php';
                     </div>
                 </div>
 
-                <div class="contact_form">
-                    <h1 style="font-size:26px;">Sazinies ar mums</h1>
-                    <div class="contact_email_subject">
-                        <input type="email" name="contact_email" placeholder="E-pasts" class="c_email" required>
-                        <input type="text" name="contact_subject" placeholder="Tēma" class="c_subject" required>
+                <form action="phpmailer/mailer.php" method="POST">
+                    <div class="contact_form">
+                        <h1 style="font-size:26px;">Sazinies ar mums</h1>
+                        <div class="contact_email_subject">
+                            <input type="email" name="contact_email" placeholder="E-pasts" class="c_email" required>
+                            <input type="text" name="contact_subject" placeholder="Tēma" class="c_subject" required>
+                        </div>
+                        <div class="contact_message_form">
+                            <textarea name="contact_message" placeholder="Ziņojums" class="c_message" required></textarea>
+                        </div>
+                        <button class="contact_button">Nosūtīt</button>
                     </div>
-                    <div class="contact_message_form">
-                        <textarea name="contact_message" placeholder="Ziņojums" class="c_message" required></textarea>
-                    </div>
-                    <button class="contact_button">Nosūtīt</button>
-                </div>
+                </form>
             </div>
         </section>
     </main>

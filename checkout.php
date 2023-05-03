@@ -20,16 +20,25 @@ if(isset($_POST['order_btn'])){
 
    $cart_query = mysqli_query($conn, "SELECT * FROM `user_cart` as uc INNER JOIN `products` AS p ON p.id = uc.product_id WHERE user_id = '$id'");
    $price_total = 0;
+
    if(mysqli_num_rows($cart_query) > 0){
-      while($product_item = mysqli_fetch_assoc($cart_query)){
-         $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
-         $product_price = $product_item['price'] * $product_item['quantity'];
-         $price_total += $product_price;
-      };
+   $product_name = array(); // initialize an empty array
+   while($product_item = mysqli_fetch_assoc($cart_query)){
+      $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
+      $product_price = $product_item['price'] * $product_item['quantity'];
+      $price_total += $product_price;
+
+      // Update product quantity in the "products" table
+      $escaped_product_name = mysqli_real_escape_string($conn, $product_item['name']);
+      $quantity = (int)$product_item['quantity'];
+      $sql = "UPDATE products SET total = total + $quantity WHERE name = '$escaped_product_name'";
+      $query = mysqli_query($conn, $sql);
+   };
    };
 
    $total_product = implode(', ',$product_name);
    $detail_query = mysqli_query($conn, "INSERT INTO `order`(name, number, email, method, flat, street, city, total_products, total_price) VALUES('$name','$number','$email','$method','$flat','$street','$city','$total_product','$price_total')") or die('query failed');
+
 
    if($cart_query && $detail_query){
       echo "

@@ -161,7 +161,7 @@ if(isset($message)){
 
                 <div class="bakery_map">
                     <p style="border-style: solid; border-width: 1px 1px 1px 1px; border-radius: 2px;">
-                        <iframe src="https://my.atlistmaps.com/map/9f81aa86-1463-4282-a431-24403d257279?share=true" allow="geolocation" width="650px" height="505px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1257.0108246141442!2d24.119453702447913!3d56.949184401734286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd30e06d6bb%3A0xed4389f0e7bedbed!2sSubway!5e0!3m2!1slv!2slv!4v1682782180391!5m2!1slv!2slv" width="650px" height="505px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </p>
                 </div>
             </div>

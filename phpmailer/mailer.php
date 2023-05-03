@@ -29,24 +29,25 @@
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "zerloga.bekerija@gmail.com";
+	$mail->Username = "emilsstrelis360@gmail.com";
 //Set gmail password
-	$mail->Password = "qnsayetwczoutifu";
+	$mail->Password = "hbjulklbquqlsnti";
 //Email subject
-	$mail->Subject = "Test email using PHPMailer";
+	$mail->Subject = "Jauns ziņojums no Zerloga beķerejas";
 //Set sender email
-	$mail->setFrom('zerloga.bekerija@gmail.com');
+	$mail->setFrom('emilsstrelis360@gmail.com');
 //Enable HTML
 	$mail->isHTML(true);
 //Email body
 	$mail->Body = "<h1>This is HTML h1 Heading</h1></br><p>This is html paragraph</p>";
 //Add recipient
-	$mail->addAddress('zerloga.bekerija@gmail.com');
+	$mail->addAddress('emilsstrelis360@gmail.com');
 //Finally send email
 	if ( $mail->send() ) {
 		echo "Email Sent..!";
 	}else{
-		echo "Message could not be sent.";
+		echo "Message could not be sent. Mailer Error: ";
 	}
 //Closing smtp connection
 	$mail->smtpClose();
+

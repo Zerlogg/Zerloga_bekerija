@@ -11,7 +11,7 @@ if(isset($_POST["submit"])){
   $duplicate = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username' OR email = '$email'");
   if(mysqli_num_rows($duplicate) > 0){
     echo
-    $_SESSION['message'] = 'Username or email has already taken!';
+    $_SESSION['message'] = 'Šis lietotājvārds jau ir aizņemts!';
     header("Location: ../login.php");
   }
   else{
@@ -19,12 +19,12 @@ if(isset($_POST["submit"])){
       $query = "INSERT INTO tb_user VALUES('','$email','$username','$password')";
       mysqli_query($conn, $query);
       echo
-      $_SESSION['message'] = 'Registration Successful';
-      header("Location: ../login.php");
+      $_SESSION['message'] = 'Reģistrācija veiksmīga';
+      header("Location: ../header.php");
     }
     else{
       echo
-      $_SESSION['message'] = 'Password Does Not Match';
+      $_SESSION['message'] = 'Parole nesakrīt';
       header("Location: ../login.php");
     }
   }
